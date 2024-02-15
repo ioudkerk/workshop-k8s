@@ -75,7 +75,7 @@ the first thing we need is the secret manager, we choose sealed-secrets to be 10
 run the following code to deploy the controller:
 
 ```
-cd sealedSecrets
+cd ${HOME_PROJECT}/sealedSecrets
 helm dependency build .
 helm upgrade -i --dependency-update -n platform sealed-secrets . --create-namespace
 ```
@@ -133,4 +133,11 @@ Now we need to move the encrypted secret to the ArgoCD template folder and remov
 
 ```
 mv repo-k8s-workshop.yaml ${HOME_PROJECT}/argocd/templates/
+```
+
+Now install ArgoCD
+```
+cd ${HOME_PROJECT}/argocd
+helm dependency build .
+helm upgrade -i --dependency-update -n argocd argocd . --create-namespace
 ```
