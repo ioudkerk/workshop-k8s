@@ -1,0 +1,8 @@
+enabledComponents:
+  traefik: false
+  certs: true
+  externalDns: false
+  rbacManager: false
+
+certs:
+  installCRDs: true

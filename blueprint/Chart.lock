@@ -1,0 +1,15 @@
+dependencies:
+- name: traefik
+  repository: https://traefik.github.io/charts
+  version: 23.1.0
+- name: cert-manager
+  repository: https://charts.jetstack.io
+  version: v1.12.2
+- name: external-dns
+  repository: https://kubernetes-sigs.github.io/external-dns/
+  version: 1.14.2
+- name: rbac-manager
+  repository: https://charts.fairwinds.com/stable
+  version: 1.17.4
+digest: sha256:8e6ebdb11f9ffc46a777414be62a54e88eb2721ae3e37426edf7519e55cc6a91
+generated: "2024-02-17T08:41:57.899487-03:00"

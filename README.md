@@ -141,3 +141,48 @@ cd ${HOME_PROJECT}/argocd
 helm dependency build .
 helm upgrade -i --dependency-update -n argocd argocd . --create-namespace
 ```
+
+## Create and deploy blue print
+
+we need to create the blueprint chart:
+
+1. helm create blueprint
+2. remove all files except the _helpers.tpl inside the folder blueprint/templates
+3. remove all the content of the values.yaml
+
+Now we need to add all the dependencies we want to use for our blueprint
+
+1. edit the Chart.yaml replace all the content with the following 
+```
+apiVersion: v2
+name: blueprint
+description: A Helm chart for Kubernetes
+
+type: application
+
+version: 0.1.0
+
+appVersion: "1.16.0"
+
+dependencies:
+- name: traefik
+  alias: traefik
+  repository: "https://traefik.github.io/charts"
+  version: 26.0.0
+  condition: enabledComponents.traefik
+- name: cert-manager
+  alias: certs
+  repository: "https://charts.jetstack.io"
+  version: 1.14.2
+  condition: enabledComponents.certs
+- name: external-dns
+  alias: externaldns
+  repository: "https://kubernetes-sigs.github.io/external-dns/"
+  version: 1.14.3
+  condition: enabledComponents.externalDns
+- name: rbac-manager
+  alias: rbac
+  repository: "https://charts.fairwinds.com/stable"
+  version: 1.19.0
+  condition: enabledComponents.rbacManager
+```

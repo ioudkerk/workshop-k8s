@@ -1,0 +1,31 @@
+apiVersion: v2
+name: blueprint
+description: A Helm chart for Kubernetes
+
+type: application
+
+version: 0.1.0
+
+appVersion: "1.16.0"
+
+dependencies:
+- name: traefik
+  alias: traefik
+  repository: "https://traefik.github.io/charts"
+  version: 26.0.0
+  condition: enabledComponents.traefik
+- name: cert-manager
+  alias: certs
+  repository: "https://charts.jetstack.io"
+  version: 1.14.2
+  condition: enabledComponents.certs
+- name: external-dns
+  alias: externaldns
+  repository: "https://kubernetes-sigs.github.io/external-dns/"
+  version: 1.14.3
+  condition: enabledComponents.externalDns
+- name: rbac-manager
+  alias: rbac
+  repository: "https://charts.fairwinds.com/stable"
+  version: 1.19.0
+  condition: enabledComponents.rbacManager
