@@ -10,6 +10,8 @@ certs:
 externaldns:
   provider:
     name: cloudflare
+  txtPrefix: drago
+  txtSuffix: workshop
   extraArgs:
     - --cloudflare-proxied
     - --cloudflare-dns-records-per-page=5000
