@@ -8,7 +8,8 @@ certs:
   installCRDs: true
 
 externaldns:
-  providerName: cloudflare
+  provider:
+    name: cloudflare
   extraArgs:
     - --cloudflare-proxied
     - --cloudflare-dns-records-per-page=5000
