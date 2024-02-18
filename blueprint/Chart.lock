@@ -11,5 +11,5 @@ dependencies:
 - name: rbac-manager
   repository: https://charts.fairwinds.com/stable
   version: 1.19.0
-digest: sha256:5d17f65d247963a0f6dd4f8147f753c765b3987b63e991b578d5ffa2b4d19b06
-generated: "2024-02-17T14:25:42.260228-03:00"
+digest: sha256:f1e83e15ee4ed99f8036a41db5749ac6369bbda91bae3ec19c45ea451b8a1f67
+generated: "2024-02-17T21:02:07.252781-03:00"

@@ -23,9 +23,9 @@ dependencies:
   alias: externaldns
   repository: "https://kubernetes-sigs.github.io/external-dns/"
   version: 1.14.3
-  condition: enabledComponents.externalDns
+  condition: enabledComponents.externaldns
 - name: rbac-manager
-  alias: rbac
+  alias: rbacmanager
   repository: "https://charts.fairwinds.com/stable"
   version: 1.19.0
-  condition: enabledComponents.rbacManager
+  condition: enabledComponents.rbacmanager

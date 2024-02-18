@@ -1,8 +1,22 @@
 enabledComponents:
   traefik: false
   certs: true
-  externalDns: false
-  rbacManager: false
+  externaldns: true
+  rbacmanager: true
 
 certs:
   installCRDs: true
+
+externaldns:
+  providerName: cloudflare
+  extraArgs:
+    - --cloudflare-proxied
+    - --cloudflare-dns-records-per-page=5000
+  env:
+    - name: CF_API_KEY
+      valueFrom:
+        secretKeyRef:
+          name: cloudflare-api-token-secret
+          key: api-token
+    - name: CF_API_EMAIL
+      value: "ioudkerk@gmail.com"
