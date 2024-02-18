@@ -19,7 +19,7 @@ externaldns:
     - name: CF_API_KEY
       valueFrom:
         secretKeyRef:
-          name: cloudflare-api-token-secret
+          name: cloudflare-global-token
           key: api-token
     - name: CF_API_EMAIL
       value: "ioudkerk@gmail.com"
