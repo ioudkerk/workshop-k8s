@@ -2,7 +2,7 @@ enabledComponents:
   traefik: false
   certs: true
   externaldns: true
-  rbacmanager: true
+  rbacmanager: false
 
 certs:
   installCRDs: true
