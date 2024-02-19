@@ -26,7 +26,4 @@ externaldns:
     - name: CF_API_EMAIL
       value: "ioudkerk@gmail.com"
 
-traefik:
-  providers:
-    kubernetesCRD:
-      allowCrossNamespace: true
+traefik: {}
