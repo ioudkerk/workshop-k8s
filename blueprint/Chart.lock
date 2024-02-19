@@ -1,7 +1,7 @@
 dependencies:
 - name: traefik
   repository: https://traefik.github.io/charts
-  version: 26.0.0
+  version: 26.1.0
 - name: cert-manager
   repository: https://charts.jetstack.io
   version: v1.14.2
@@ -11,5 +11,5 @@ dependencies:
 - name: rbac-manager
   repository: https://charts.fairwinds.com/stable
   version: 1.19.0
-digest: sha256:f1e83e15ee4ed99f8036a41db5749ac6369bbda91bae3ec19c45ea451b8a1f67
-generated: "2024-02-17T21:02:07.252781-03:00"
+digest: sha256:47faf6bfbdbff5493e205d1bdc0a3939ed1391a69f7c4e462cd85a7889bb0399
+generated: "2024-02-19T12:08:27.524089-03:00"

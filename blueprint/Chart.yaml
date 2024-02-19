@@ -12,7 +12,7 @@ dependencies:
 - name: traefik
   alias: traefik
   repository: "https://traefik.github.io/charts"
-  version: 26.0.0
+  version: 26.1.0
   condition: enabledComponents.traefik
 - name: cert-manager
   alias: certs
