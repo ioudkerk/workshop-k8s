@@ -17,6 +17,8 @@ externaldns:
   extraArgs:
     - --cloudflare-proxied
     - --cloudflare-dns-records-per-page=5000
+    - --txt-encrypt-enabled
+    - --txt-encrypt-aes-key=81283hkjasd9.bglafa8377172hlabsa
   env:
     - name: CF_API_KEY
       valueFrom:
@@ -27,6 +29,9 @@ externaldns:
       value: "ioudkerk@gmail.com"
 
 traefik:
+  ingressRoute:
+    dashboard:
+      enabled: false
   providers:
     kubernetesCRD:
       allowCrossNamespace: true
