@@ -186,3 +186,10 @@ dependencies:
   version: 1.19.0
   condition: enabledComponents.rbacManager
 ```
+
+
+---
+
+Debug some problems:
+1. traefik helm validation
+2. crd not installed

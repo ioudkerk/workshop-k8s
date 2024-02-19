@@ -12,4 +12,4 @@ dependencies:
 - name: traefik
   alias: traefik
   repository: "https://traefik.github.io/charts"
-  version: 26.1.0
+  version: 23.1.0
