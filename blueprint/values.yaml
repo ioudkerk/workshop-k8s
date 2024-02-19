@@ -27,9 +27,9 @@ externaldns:
       value: "ioudkerk@gmail.com"
 
 traefik:
-  experimental:
-    plugins:
-      enabled: true
+  # experimental:
+  #   plugins:
+  #     enabled: true
   providers:
     kubernetesCRD:
       allowCrossNamespace: true
