@@ -37,7 +37,7 @@ externaldns:
       value: "ioudkerk@gmail.com"
 
 traefik:
-  entryPoints:
+  ports:
     websecure:
       proxyProtocol:
         trustedIPs:
