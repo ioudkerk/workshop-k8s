@@ -10,8 +10,8 @@ certs:
 externaldns:
   provider:
     name: cloudflare
-  sources:
-    - traefik-proxy
+  # sources:
+  #   - traefik-proxy
   txtPrefix: drago
   txtSuffix: workshop
   extraArgs:
@@ -27,7 +27,6 @@ externaldns:
       value: "ioudkerk@gmail.com"
 
 traefik:
-
   providers:
     kubernetesCRD:
       allowCrossNamespace: true
