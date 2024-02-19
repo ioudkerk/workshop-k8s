@@ -1,5 +1,5 @@
 enabledComponents:
-  traefik: true
+  traefik: false
   certs: true
   externaldns: true
   rbacmanager: false
