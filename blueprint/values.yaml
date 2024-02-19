@@ -7,6 +7,14 @@ enabledComponents:
 certs:
   installCRDs: true
 
+certs:
+  installCRDs: true
+  namespace: platform
+  global:
+    leaderElection:
+      namespace: platform
+  clusterResourceNamespace: platform
+
 externaldns:
   provider:
     name: cloudflare

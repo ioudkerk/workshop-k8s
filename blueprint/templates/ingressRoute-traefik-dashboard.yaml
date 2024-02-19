@@ -10,7 +10,7 @@ spec:
     - traefik.aivandrago.me
   issuerRef:
     name: cloudflare-issuer
-    kind: Issuer
+    kind: ClusterIssuer
 {{ end -}}
 {{ if .Capabilities.APIVersions.Has "traefik.io/v1alpha1" -}}
 ---
