@@ -30,3 +30,10 @@ traefik:
   providers:
     kubernetesCRD:
       allowCrossNamespace: true
+  service:
+    annotations:      
+      load-balancer.hetzner.cloud/http-redirect-https: "false"
+      load-balancer.hetzner.cloud/location: nbg1
+      load-balancer.hetzner.cloud/name: traefik
+      load-balancer.hetzner.cloud/uses-proxyprotocol: "true"
+      load-balancer.hetzner.cloud/use-private-ip: "true"
