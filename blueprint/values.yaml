@@ -37,6 +37,11 @@ externaldns:
       value: "ioudkerk@gmail.com"
 
 traefik:
+  entryPoints:
+    websecure:
+      proxyProtocol:
+        trustedIPs:
+          - "10.0.0.0/16"
   ingressRoute:
     dashboard:
       enabled: false

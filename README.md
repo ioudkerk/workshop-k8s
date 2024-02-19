@@ -194,3 +194,4 @@ Debug some problems:
 1. traefik helm validation
 2. crd not installed
 3. break argocd, and fix it
+4. debug proxy protocol
