@@ -1,5 +1,5 @@
 enabledComponents:
-  traefik: false
+  traefik: true
   certs: true
   externaldns: true
   rbacmanager: false
@@ -23,3 +23,11 @@ externaldns:
           key: api-token
     - name: CF_API_EMAIL
       value: "ioudkerk@gmail.com"
+
+traefik:
+  experimental:
+    plugins:
+      enabled: true
+  providers:
+    kubernetesCRD:
+      allowCrossNamespace: true
