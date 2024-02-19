@@ -10,6 +10,8 @@ certs:
 externaldns:
   provider:
     name: cloudflare
+  sources:
+    - traefik-proxy
   txtPrefix: drago
   txtSuffix: workshop
   extraArgs:
