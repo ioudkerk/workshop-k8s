@@ -30,7 +30,7 @@ spec:
     - match: Host(`argocd.aivandrago.me`)
       kind: Rule
       services:
-        - name: argocd
+        - name: argocd-server
           kind: Service
           port: 443
   tls:
