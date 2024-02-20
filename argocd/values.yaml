@@ -1,1 +1,4 @@
-argocd: {}
+argocd:
+  configs:    
+    params:
+      server.insecure: true
