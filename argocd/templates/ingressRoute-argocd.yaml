@@ -32,7 +32,6 @@ spec:
       services:
         - name: argocd
           kind: Service
-          namespace: argocd
           port: 443
   tls:
     secretName: argocd-tls
