@@ -1,9 +1,20 @@
 apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
+  annotations:
+    sealedsecrets.bitnami.com/namespace-wide: "true"
   creationTimestamp: null
   name: cloudflare-global-token
   namespace: platform
 spec:
   encryptedData:
-    api-token: AgCyqSnWYxX8DVuAIDFowTf1NgVygXqJIFnfuj5ATO4Y84doVBBFdiPC7HRhrXHgZfghHBkg25yHp9vyOkZ8YMssz1Bt/F6cCiESqSmZURvfXNyHvdoChXkpTVOEmQ/zjQ6R7iKSQ+w8Dd96aPZaDEQ4+BEpQzF9HKyVxphKgb9zn2PR/TVYfTmX0MECQwYRK+tojfvFVRqqYuOPtr8ESdGiuS2x/0qMXXsNn5T+atTZq2qWjjQQSMuCYA47OT1x6qmj7npbaMVDi19clBv9RfQaxRQzwiWCpFCUDova/l3Gv9972SOCAhQp8tearfJ+SQur2qIlNuTQD6TeJJZ9PFGVFdS00J13A2fHBrmzFSrqKb94mgOEv5ohkc9p2rnR4x+8CWBxgLRDUPqOql6QyFGvhGIXcpvVVitOiR7wmJgwtOOCNJ3spwv6Ifn0rtIlAvpCbaQiryq1PdjvxL5meONW2+ZzMaXxU+9uWHWik9Vmh6Iv1u2O7vr+V7KK2+vEi7QeqyG0ArVLdkcaOzN36K7PqfxlATAJTh457nBDANBPk3qVA4hLGLc3OXbiKYrQBnomSYGaZZDtnakKWNhd+5f9WiK+QB5QzUrzsSyRW0eR3Gc7ciEg9Ys4yY/qK9p7Zll2j0bvopxmMH8a6Y63en/nCoG165yJKISx9bbnqFjLRCc7Tm3YNKnbpQ8B47LcAjBRqpwJ6gNQrftD9xwMRoQQ7xUwSn2T390KQkB9gwgoL/zkxqCn
+    api-token: AgB4wz8FynRF+RL1RhtL6Zt6RtXz9Y5TIYcANwSW+6IyHSTl5mftK9+De4dsSyOurtW2DJZTIGHWyyGiS574uNSr18hXlGxlD6bbbGa69H36ze8F5coKk1Z9t5YJB39JApJfnk+K0VQ0gQtln/9HfI19g+KkRMrVdiBVeEHR6lb8cm6nBA8gMu1z7Td5zNquyTFnxhKg9mh8ynsytC3CUICDcsCCxNqjLZ+2F/3zgmNkbHTVU5QWXvyNd8WMdqo7scl3JRBlzHQumNZ8fIUeARqFty6DHqozVnXtHsBwkrMehe+5Tk3uNjoNH84xdjxRjtoowneIF+tBaLB+e8EQk7t84VNRxBpSB3fYVvRMjcWgpFW+Mss1KEZ/indH4klFs7Jzh+wKegXFOZ7/XExisv+8eAqedCfQMg7AZjwLeOZEStUSHF09ZTzRhODNFKk0t7MD16F0JrygPTsBPKTEn0OCIC2/kxUuz3rAvszE66/YYc0QL8aomxBMjAcsxk3RMFNu1Skl0J9ISxRy/tLGvn8D67dBqPQHlr2ueWgz4TismQqVYmg30/ElpOqmQzyFINJnULDl1pqF+g1ovFSGASqCs8wC0F22jjdC6aKxAENH47ArVvQx9TW0HYNonF8UvHLa15pRji/fU5fQ9caHPe8RIzshtjltKEpjBtrhm2xYK319atV6dc9uu5i+JhxziN/Y8MszJxWUsGP2Jt2cHPQ0RC3CBWvC+BYrvGT5a59EiYxyMqAdJA==
+  template:
+    data: null
+    metadata:
+      annotations:
+        sealedsecrets.bitnami.com/namespace-wide: "true"
+      creationTimestamp: null
+      name: cloudflare-global-token
+      namespace: platform
+
