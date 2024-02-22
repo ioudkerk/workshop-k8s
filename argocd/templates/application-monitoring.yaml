@@ -28,6 +28,7 @@ spec:
         - /spec/relabelings
     - kind: StatefulSet
       name: monitoring-minio
+      group: apps
       jqPathExpressions:
         - .spec.volumeClaimTemplates[].apiVersion
         - .spec.volumeClaimTemplates[].kind
