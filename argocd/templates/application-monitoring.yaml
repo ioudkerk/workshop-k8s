@@ -22,7 +22,13 @@ spec:
       - ServerSideApply=true
   ignoreDifferences:
     - kind: PodLogs
+      group: monitoring.grafana.com
       name: monitoring-loki
       jsonPointers:
-      - /spec/relabelings
+        - /spec/relabelings
+    - kind: StatefulSet
+      name: monitoring-minio
+      jqPathExpressions:
+        - .spec.volumeClaimTemplates[].apiVersion
+        - .spec.volumeClaimTemplates[].kind
 {{ end -}}
