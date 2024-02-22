@@ -1,6 +1,9 @@
 loki:
   minio:
     enabled: true
+  backend:
+    persistence:
+      enableStatefulSetAutoDeletePVC: false
 
 prometheus:
   kubelet:
