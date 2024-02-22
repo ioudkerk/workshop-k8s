@@ -12,7 +12,9 @@ dependencies:
 - name: loki  
   repository: "https://grafana.github.io/helm-charts"
   version: 5.43.2
+  condition: components.loki.enabled
 - name: kube-prometheus-stack
   alias: prometheus
   repository: "https://prometheus-community.github.io/helm-charts"
   version: 56.8.2
+  condition: components.prometheus.enabled

@@ -1,3 +1,7 @@
+components:
+  loki: true
+  prometheus: false
+
 loki:
   minio:
     enabled: true
