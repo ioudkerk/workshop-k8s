@@ -1,3 +1,50 @@
 loki:
   minio:
     enabled: true
+
+prometheus:
+  kubelet:
+    serviceMonitor:
+      cAdvisorRelabelings:
+        - action: replace
+          replacement: k8s-workshop
+          targetLabel: cluster
+        - targetLabel: metrics_path
+          sourceLabels:
+            - "__metrics_path__"
+        - targetLabel: "instance"
+          sourceLabels:
+            - "node"
+
+  defaultRules:
+    additionalRuleLabels:
+      cluster: k8s-workshop
+
+  "kube-state-metrics":
+    prometheus:
+      monitor:
+        relabelings:
+          - action: replace
+            replacement: k8s-workshop
+            targetLabel: cluster
+          - targetLabel: "instance"
+            sourceLabels:
+              - "__meta_kubernetes_pod_node_name"
+
+  "prometheus-node-exporter":
+    prometheus:
+      monitor:
+        relabelings:
+          - action: replace
+            replacement: k8s-workshop
+            targetLabel: cluster
+          - targetLabel: "instance"
+            sourceLabels:
+              - "__meta_kubernetes_pod_node_name"
+
+  prometheus:
+    monitor:
+      relabelings:
+        - action: replace
+          replacement: k8s-workshop
+          targetLabel: cluster
