@@ -22,7 +22,7 @@ spec:
       - ServerSideApply=true
   ignoreDifferences:
     - kind: PodLogs
-      name: dapr-trust-bundle
+      name: monitoring-loki
       jsonPointers:
       - /spec/relabelings
 {{ end -}}
