@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: loki
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/ioudkerk/workshop-k8s.git'
+    path: monitoring/loki
+    targetRevision: add/monitoring
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: monitoring
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
+      - ServerSideApply=true
+  # ignoreDifferences:
+  #   - kind: PodLogs
+  #     group: loki.grafana.com
+  #     name: loki-loki
+  #     jsonPointers:
+  #       - /spec/relabelings
+  #   - kind: StatefulSet
+  #     name: loki-minio
+  #     group: apps
+  #     jqPathExpressions:
+  #       - .spec.volumeClaimTemplates[].apiVersion
+  #       - .spec.volumeClaimTemplates[].kind

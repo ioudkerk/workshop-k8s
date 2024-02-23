@@ -12,4 +12,3 @@ dependencies:
 - name: loki  
   repository: "https://grafana.github.io/helm-charts"
   version: 5.43.2
-  condition: components.loki
