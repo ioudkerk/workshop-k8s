@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/ioudkerk/workshop-k8s.git'
     path: applications/monitoring
-    targetRevision: HEAD
+    targetRevision: add/monitoring
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: monitoring
