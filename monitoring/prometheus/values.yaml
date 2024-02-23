@@ -1,13 +1,3 @@
-components:
-  loki: true
-  prometheus: false
-
-loki:
-  minio:
-    enabled: true
-  backend:
-    persistence:
-      enableStatefulSetAutoDeletePVC: false
 
 prometheus:
   kubelet:
