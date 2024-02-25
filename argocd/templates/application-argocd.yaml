@@ -8,14 +8,14 @@ spec:
   source:
     repoURL: 'https://github.com/ioudkerk/workshop-k8s.git'
     path: argocd
-    targetRevision: HEAD
+    targetRevision: add/monitoring
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
   syncPolicy:
     automated:
-      prune: true
-      selfHeal: true
+      prune: false
+      selfHeal: false
     syncOptions:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
