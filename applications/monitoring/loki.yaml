@@ -20,15 +20,15 @@ spec:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
       - ServerSideApply=true
-  # ignoreDifferences:
-  #   - kind: PodLogs
-  #     group: loki.grafana.com
-  #     name: loki-loki
-  #     jsonPointers:
-  #       - /spec/relabelings
-  #   - kind: StatefulSet
-  #     name: loki-minio
-  #     group: apps
-  #     jqPathExpressions:
-  #       - .spec.volumeClaimTemplates[].apiVersion
-  #       - .spec.volumeClaimTemplates[].kind
+  ignoreDifferences:
+    - kind: PodLogs
+      group: monitoring.grafana.com
+      name: loki
+      jsonPointers:
+        - /spec/relabelings
+    - kind: StatefulSet
+      name: loki-minio
+      group: apps
+      jqPathExpressions:
+        - .spec.volumeClaimTemplates[].apiVersion
+        - .spec.volumeClaimTemplates[].kind
