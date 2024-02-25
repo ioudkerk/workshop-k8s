@@ -4,3 +4,5 @@ loki:
   backend:
     persistence:
       enableStatefulSetAutoDeletePVC: false
+  loki:
+    auth_enabled: false
