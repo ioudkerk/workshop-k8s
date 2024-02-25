@@ -20,3 +20,22 @@ spec:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
       - ServerSideApply=true
+  ignoreDifferences:    
+    - kind: ServiceMonitor
+      name: prometheus-prometheus-node-exporter
+      group: monitoring.coreos.com
+      jqPathExpressions:
+        - .spec.endpoints[0].relabelings[].action
+        - .spec.endpoints[0].relabelings[].sourceLabels
+    - kind: ServiceMonitor
+      name: prometheus-kube-state-metrics
+      group: monitoring.coreos.com
+      jqPathExpressions:
+        - .spec.endpoints[0].relabelings[].action
+        - .spec.endpoints[0].relabelings[].sourceLabels
+    - kind: ServiceMonitor
+      name: prometheus-kubelet
+      group: monitoring.coreos.com
+      jqPathExpressions:
+        - .spec.endpoints[0].relabelings[].action
+        - .spec.endpoints[0].relabelings[].sourceLabels
