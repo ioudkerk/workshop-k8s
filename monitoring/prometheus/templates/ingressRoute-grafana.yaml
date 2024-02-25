@@ -3,9 +3,9 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: argocd
+  name: grafana
 spec:
-  secretName: argocd-tls
+  secretName: grafana-tls
   dnsNames:
     - grafana.aivandrago.me
   issuerRef:
@@ -17,7 +17,7 @@ spec:
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
-  name: argocd
+  name: grafana
   annotations:
     external-dns.alpha.kubernetes.io/hostname: grafana.aivandrago.me
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
@@ -34,5 +34,5 @@ spec:
           kind: Service
           port: 80
   tls:
-    secretName: argocd-tls
+    secretName: grafana-tls
 {{ end -}}
