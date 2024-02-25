@@ -37,5 +37,5 @@ spec:
       name: prometheus-kubelet
       group: monitoring.coreos.com
       jqPathExpressions:
-        - .spec.endpoints[0].relabelings[].action
-        - .spec.endpoints[0].relabelings[].sourceLabels
+        - .spec.endpoints[1].relabelings[].action
+        - .spec.endpoints[1].relabelings[].sourceLabels
