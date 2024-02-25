@@ -1,0 +1,38 @@
+{{ if .Capabilities.APIVersions.Has "cert-manager.io/v1" -}}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: argocd
+spec:
+  secretName: argocd-tls
+  dnsNames:
+    - grafana.aivandrago.me
+  issuerRef:
+    name: cloudflare-issuer
+    kind: ClusterIssuer
+{{ end -}}
+{{ if .Capabilities.APIVersions.Has "traefik.io/v1alpha1" -}}
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: argocd
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: grafana.aivandrago.me
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+    external-dns.alpha.kubernetes.io/ttl: "300"
+    external-dns.alpha.kubernetes.io/target: 167.235.108.155
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`grafana.aivandrago.me`)
+      kind: Rule
+      services:
+        - name: prometheus-grafana
+          kind: Service
+          port: 80
+  tls:
+    secretName: argocd-tls
+{{ end -}}
