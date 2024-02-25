@@ -3,6 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: monitoring
+  namespace: argocd
 spec:
   project: default
   source:
@@ -11,6 +12,7 @@ spec:
     targetRevision: add/monitoring
   destination:
     server: 'https://kubernetes.default.svc'
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true
