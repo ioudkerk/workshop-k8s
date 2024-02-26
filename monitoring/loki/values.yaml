@@ -6,3 +6,8 @@ loki:
       enableStatefulSetAutoDeletePVC: false
   loki:
     auth_enabled: false
+
+  monitoring:
+    selfMonitoring:
+      grafanaAgent:
+        installOperator: false
