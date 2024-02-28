@@ -1,0 +1,5 @@
+promtail:
+  serviceMonitor:
+    enabled: true
+  prometheusRule:
+    enabled: true
