@@ -15,3 +15,6 @@ loki:
       enabled: false
       grafanaAgent:
         installOperator: false
+
+  enterprise:
+    cluster_name: workshop_k8s-loki
