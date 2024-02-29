@@ -195,3 +195,4 @@ Debug some problems:
 2. crd not installed
 3. break argocd, and fix it
 4. debug proxy protocol
+5. prometheus scrapper filter
