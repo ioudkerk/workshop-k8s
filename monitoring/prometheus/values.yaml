@@ -45,3 +45,7 @@ prometheus:
         - action: replace
           replacement: k8s-workshop
           targetLabel: cluster
+
+  
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
