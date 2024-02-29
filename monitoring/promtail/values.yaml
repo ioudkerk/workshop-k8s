@@ -3,3 +3,9 @@ promtail:
     enabled: true
   prometheusRule:
     enabled: true
+  
+  config:
+    clients:
+      - url: http://loki-gateway/loki/api/v1/push
+        external_labels: 
+          cluster: k8s-workshop
