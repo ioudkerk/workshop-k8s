@@ -1,0 +1,20 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  labels:
+    {{- include "blueprint.labels" . | nindent 4 }}
+  name: {{- include "blueprint.blueprint.fullname" }}
+spec:
+  endpoints:
+    - interval: 15s
+      path: /metrics
+      port: metrics
+      relabelings:        
+        - action: replace
+          replacement: k8s-workshop
+          targetLabel: cluster
+      scheme: http
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: blueprint-platform
+      app.kubernetes.io/name: traefik      
