@@ -37,6 +37,9 @@ externaldns:
       value: "ioudkerk@gmail.com"
 
 traefik:
+  logs:
+    access:
+      enabled: true
   ports:
     websecure:
       expose: true
