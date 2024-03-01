@@ -9,5 +9,5 @@ spec:
     matchLabels:
       app.kubernetes.io/instance: blueprint-platform
       app.kubernetes.io/name: traefik      
-    podMetricsEndpoints:
-      - port: metrics
+  podMetricsEndpoints:
+    - port: metrics

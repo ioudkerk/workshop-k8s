@@ -47,3 +47,4 @@ prometheus:
           targetLabel: cluster
     prometheusSpec:
       serviceMonitorSelectorNilUsesHelmValues: false
+      podMonitorSelectorNilUsesHelmValues: false
