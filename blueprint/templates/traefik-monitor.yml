@@ -1,9 +1,9 @@
 apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
+  name: {{ include "blueprint.fullname" . }}-traefik
   labels:
     {{- include "blueprint.labels" . | nindent 4 }}
-  name: {{- include "blueprint.blueprint.fullname" }}
 spec:
   endpoints:
     - interval: 15s
