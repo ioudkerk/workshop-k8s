@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: 'https://github.com/ioudkerk/workshop-k8s.git'
     path: applications/monitoring
-    targetRevision: add/monitoring
+    targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
