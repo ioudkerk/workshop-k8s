@@ -57,7 +57,7 @@ ingress:
   target: "49.13.40.206"
 
 env:
-  DNA_DB_PATH: /app/data/stats.db
+  DNA_DB_PATH: /data/stats.db
   FLASK_ENV: production
   FLASK_HOST: 0.0.0.0
 
