@@ -2,8 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: prod-apps
-  namespace: platform
+  name: prod
 spec:
   project: default
   source:
