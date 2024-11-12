@@ -63,4 +63,14 @@ env:
 
 persistent:
   enable: true
-  size: 10Gi
+  size: "10Gi"
+  mountPath: "/data"
+
+volumes:
+  - name: data-volume
+    persistentVolumeClaim:
+      claimName: "magneto-hr-pv"
+
+volumeMounts:
+  - name: data-volume
+    mountPath: "/data"
