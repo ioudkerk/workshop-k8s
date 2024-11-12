@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: magneto-hr
+  namespace: argocd
+spec:
+  project: default
+  source:    
+    repoURL: 'https://github.com/ioudkerk/workshop-k8s.git'
+    path: helm-charts/magneto-hr
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: meli
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
+      - ServerSideApply=true

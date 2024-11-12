@@ -1,0 +1,23 @@
+{{ if .Capabilities.APIVersions.Has "argoproj.io/v1alpha1" -}}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod-apps
+  namespace: platform
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/ioudkerk/workshop-k8s.git'
+    path: applications/prod
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: platform
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
+{{ end -}}

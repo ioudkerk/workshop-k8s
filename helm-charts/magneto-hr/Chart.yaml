@@ -1,0 +1,6 @@
+apiVersion: v2
+name: magneto-hr
+description: A Helm chart for Magneto's HR system to recruit and manage mutants for the Brotherhood of Mutants
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

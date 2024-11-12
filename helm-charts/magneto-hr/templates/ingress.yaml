@@ -1,0 +1,38 @@
+{{ if .Capabilities.APIVersions.Has "cert-manager.io/v1" -}}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ include "magneto-hr.fullname" . }}
+spec:
+  secretName: {{ include "magneto-hr.fullname" . }}
+  dnsNames:
+    - {{ .Values.ingress.dns }}
+  issuerRef:
+    name: {{ .Values.ingress.issuer.name }}
+    kind: {{ .Values.ingress.issuer.kind }}
+{{ end -}}
+{{ if .Capabilities.APIVersions.Has "traefik.io/v1alpha1" -}}
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ include "magneto-hr.fullname" . }}
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: {{ .Values.ingress.dns }}
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "{{ .Values.ingress.cloudflareProxied }}"
+    external-dns.alpha.kubernetes.io/ttl: "{{ .Values.ingress.ttl }}"
+    external-dns.alpha.kubernetes.io/target: {{ .Values.ingress.target }}
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`{{ .Values.ingress.dns }}`)
+      kind: Rule
+      services:
+        - name: {{ include "magneto-hr.fullname" . }}
+          kind: Service
+          port: {{ .Values.service.port }}
+  tls:
+    secretName: {{ include "magneto-hr.fullname" . }}
+{{ end -}}
