@@ -19,7 +19,7 @@ spec:
       {{- end }}
       labels:
         {{- include "magneto-hr.labels" . | nindent 8 }}
-	{{- with .Values.podLabels }}
+{{- with .Values.podLabels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
@@ -48,6 +48,11 @@ spec:
             httpGet:
               path: /
               port: http
+          env:
+            {{- range $key, $value := .Values.env }}
+            - name: {{ $key }}
+              value: {{ $value | quote }}
+            {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}

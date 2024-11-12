@@ -55,3 +55,12 @@ ingress:
   cloudflareProxied: "true"
   ttl: "300"
   target: "49.13.40.206"
+
+env:
+  DNA_DB_PATH: /app/data/stats.db
+  FLASK_ENV: production
+  FLASK_HOST: 0.0.0.0
+
+persistent:
+  enable: true
+  size: 10Gi
